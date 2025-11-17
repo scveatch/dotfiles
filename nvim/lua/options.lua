@@ -19,3 +19,13 @@ vim.opt.splitright = true       -- New horizontal splits right
 vim.opt.incsearch = true        -- Search as characters are entered
 vim.opt.ignorecase = true       -- Ignore case in searches by default 
 vim.opt.smartcase = true        -- Case sensitive search if capital is entered
+
+-- Folds
+vim.opt.foldmethod = "indent"
+vim.opt.foldexpr = nil
+-- vim.opt.foldmethod = "expr"     -- Use expression-based folding
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()" -- Tree-sitter powered folds
+vim.opt.foldenable = true       -- Enable folding by default
+vim.opt.foldlevel = 99          -- Open all folds when a buffer is opened
+vim.opt.foldlevelstart = 99     -- Start with all folds open
+vim.opt.foldcolumn = "2"        -- Show a 2-character-wide fold column

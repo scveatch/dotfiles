@@ -1,16 +1,35 @@
 return {
     "saghen/blink.cmp",
-    dependencies = { "rafamadriz/friendly-snippets" },
+    dependencies = { 
+        "L3MON4D3/LuaSnip",
+        "rafamadriz/friendly-snippets" 
+    },
 
     -- Use a release tag to download pre-built binaries
     version = "*", 
 
+    config = function(_, opts)
+        -- load vscode-style snippets (friendly-snippets + any custom ones you put in ~/.config/nvim/snippets)
+        require("luasnip.loaders.from_vscode").lazy_load()
+        -- Load custom snippets
+        require("luasnip.loaders.from_lua").lazy_load({ paths = vim.fn.stdpath("config") .. "/snippets" })
+
+        -- setup blink
+        require("blink.cmp").setup(opts)
+    end,
+
     opts = {
         keymap = {
             preset = "enter",
+            ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+            ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
         },
         
         fuzzy = { implementation = "prefer_rust_with_warning" },
+        snippets = {preset = "luasnip"},
+        sources = {
+          default = { 'lsp', 'path', 'snippets', 'buffer' },
+        },
 
         completion = {
             -- The keyword should only match against the text before
