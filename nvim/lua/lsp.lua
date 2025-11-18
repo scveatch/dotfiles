@@ -34,7 +34,4 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.lsp.config["pyright"] = require("lsp.pyright")
 
 vim.lsp.enable("pyright")
-
-lspconfig.pyright.setup(require("lsp.pyright"))
-lspconfig.hls.setup(require("lsp.hls"))
-
+vim.lsp.enable("hls")
