@@ -64,6 +64,7 @@ return {
       end,
     },
 
+    -- LaTeX support
     {
       "lervag/vimtex",
       ft = { "tex" },
@@ -77,4 +78,25 @@ return {
       end,
     },
 
+    -- Auto-Documentation
+    {
+      "danymat/neogen",
+      dependencies = "nvim-treesitter/nvim-treesitter",
+      opts = {
+          snippet_engine = "luasnip",  
+          languages = {
+              python = {
+                    template = {
+                        annotation_convention = "google_docstrings", -- or numpy, or pydoc
+                        use_type_annotations = true,
+                        use_multiline = true,
+                    },
+                    placeholders = true,
+              }
+          }
+      },
+      keys = {
+          { "<leader>dn", "<cmd>Neogen<CR>", desc = "Generate docstring" }
+      }
+    },
 }
