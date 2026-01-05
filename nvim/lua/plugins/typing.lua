@@ -3,9 +3,7 @@ return {
     -- Allows easy surrounding quotes
     "nvim-mini/mini.surround",
     version = false, -- use latest
-    config = function()
-      require("mini.surround").setup({
-        -- Optional: customize mappings here
+    opts = {
         mappings = {
           add = "sa",        -- Add surrounding in normal & visual mode
           delete = "sd",     -- Delete surrounding
@@ -15,17 +13,26 @@ return {
           replace = "sr",    -- Replace surrounding
           update_n_lines = "sn", -- Update surrounding across lines
         },
-      })
-    end,
+    },
   },
   -- Shows keymappings
   {
       "folke/which-key.nvim",
       event = "VeryLazy",
       opts = {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
+          spec = {
+              {
+              mode = { "n", "v" },  -- normal + visual
+              { "s",  group = "+surround" },
+              { "sa", desc = "Add surrounding" },
+              { "sd", desc = "Delete surrounding" },
+              { "sf", desc = "Find right surrounding" },
+              { "sF", desc = "Find left surrounding" },
+              { "sh", desc = "Highlight surrounding" },
+              { "sr", desc = "Replace surrounding" },
+              { "sn", desc = "Update surrounding lines" },
+             },
+          },
       },
       keys = {
         {
