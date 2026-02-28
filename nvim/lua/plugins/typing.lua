@@ -5,13 +5,13 @@ return {
     version = false, -- use latest
     opts = {
         mappings = {
-          add = "sa",        -- Add surrounding in normal & visual mode
-          delete = "sd",     -- Delete surrounding
-          find = "sf",       -- Find surrounding (to the right)
-          find_left = "sF",  -- Find surrounding (to the left)
-          highlight = "sh",  -- Highlight surrounding
-          replace = "sr",    -- Replace surrounding
-          update_n_lines = "sn", -- Update surrounding across lines
+          add = "<leader>sa",        -- Add surrounding in normal & visual mode
+          delete = "<leader>sd",     -- Delete surrounding
+          find = "<leader>sf",       -- Find surrounding (to the right)
+          find_left = "<leader>sF",  -- Find surrounding (to the left)
+          highlight = "<leader>sh",  -- Highlight surrounding
+          replace = "<leader>sr",    -- Replace surrounding
+          update_n_lines = "<leader>sn", -- Update surrounding across lines
         },
     },
   },

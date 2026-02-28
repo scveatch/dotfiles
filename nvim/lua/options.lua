@@ -1,6 +1,6 @@
 -- Basic Config Settings 
-vim.opt.clipboard = "unnamedplus" 	-- Use system clipboard
-vim.opt.completeopt = {"menu", "menuone", "noselect"}
+-- vim.opt.clipboard = "unnamedplus" 	-- Use system clipboard
+-- vim.opt.completeopt = {"menu", "menuone", "noselect"}
 vim.opt.mouse = "a"  			-- Allow the mouse 
 
 -- Tabs
@@ -24,8 +24,12 @@ vim.opt.smartcase = true        -- Case sensitive search if capital is entered
 vim.opt.foldmethod = "indent"
 vim.opt.foldexpr = nil
 -- vim.opt.foldmethod = "expr"     -- Use expression-based folding
--- vim.opt.foldexpr = "nvim_treesitter#foldexpr()" -- Tree-sitter powered folds
+-- vim.opt.foldexpr = "v:lua.require'fold'.foldexpr()"
+-- vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()" -- Tree-sitter powered folds
 vim.opt.foldenable = true       -- Enable folding by default
 vim.opt.foldlevel = 99          -- Open all folds when a buffer is opened
 vim.opt.foldlevelstart = 99     -- Start with all folds open
 vim.opt.foldcolumn = "2"        -- Show a 2-character-wide fold column
+
+-- Text
+vim.opt_local.textwidth = 120   -- Set Textwidth to 120 chars
