@@ -1,0 +1,9 @@
+
+[user] 
+    name = Spencer Veatch 
+    email = scveatch@willamette.edu
+
+[core] 
+    editor = nvim 
+    pager = less -FRX
+    autocrlf = input

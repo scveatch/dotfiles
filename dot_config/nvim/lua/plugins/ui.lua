@@ -4,16 +4,6 @@ return {
       vim.cmd("colorscheme vscode")
     end
   },
-  -- Treesitter 
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", 
-    config = function ()
-    require("nvim-treesitter.configs").setup({
-      ensure_installed = { "python", "lua", "vim", "markdown", "query", "haskell" },
-      highlight = { enable = true },
-      indent = { enable = true },
-      fold = { enable = true },
-    })
-  end,},
   -- File Explorer Sidebar 
   { "kyazdani42/nvim-tree.lua",
       config = function()

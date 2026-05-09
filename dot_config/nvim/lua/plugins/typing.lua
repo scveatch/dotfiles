@@ -52,25 +52,6 @@ return {
         require("nvim-autopairs").setup()
       end,
     },
-    -- Tabout 
-    {
-      "abecodes/tabout.nvim",
-      event = "InsertEnter",
-      dependencies = {
-        "nvim-treesitter/nvim-treesitter",
-      },
-      config = function()
-        require("tabout").setup({
-          tabkey = "<Tab>",            -- key to trigger tabout
-          backwards_tabkey = "<S-Tab>", -- key to go backwards
-          act_as_tab = true,           -- if tab doesn’t trigger tabout, insert a tab
-          completion = true,           -- integrate with nvim-cmp
-          ignore_beginning = true,     -- don’t tabout if cursor is at beginning of a bracket/quote
-          exclude = {},                -- filetypes to exclude
-        })
-      end,
-    },
-
     -- LaTeX support
     {
       "lervag/vimtex",
@@ -88,7 +69,7 @@ return {
     -- Auto-Documentation
     {
       "danymat/neogen",
-      dependencies = "nvim-treesitter/nvim-treesitter",
+      --dependencies = "nvim-treesitter/nvim-treesitter",
       opts = {
           snippet_engine = "luasnip",  
           languages = {

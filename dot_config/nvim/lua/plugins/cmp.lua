@@ -36,7 +36,7 @@ return {
             keyword = { range = "prefix" },
             menu = {
                 -- Use treesitter to highlight the label text for the given list of sources
-                draw = { treesitter = { "lsp" } },
+                --draw = { treesitter = { "lsp" } },
             },
             -- Show completions after typing a trigger character, defined by source
             trigger = { show_on_trigger_character = true },
