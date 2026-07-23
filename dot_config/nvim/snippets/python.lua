@@ -11,7 +11,6 @@ return {
     t('"""'),
     t({"", "File: "}), i(1, "filename.py"),
     t({"", "", "Description: "}), i(2, "Brief description of the file"),
-    t({"", "", "Author: Spencer Veatch (sveatch@georgefox.edu)"}),
     t({"", "", "Last Modified: "}), i(3, "YYYY-MM-DD"),
     t({"", '"""'}),
   }),
