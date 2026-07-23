@@ -50,6 +50,7 @@ are managed using a `pyproject.toml`.
 |Rust    |rustfmt   |
 |Lua   |stylua   |
 |Haskell |ormolu   |
+|Toml |taplo   |
 
 ## Maintenance: 
 Check for changes with 
