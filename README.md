@@ -2,6 +2,12 @@
 
 Personal development environment managed with [chezmoi](https://www.chezmoi.io/).
 
+Note that `neovim` is managed with the [bob](https://github.com/mordechaihadad/bob), a handy neovim version manager.
+This particular setup is pinned to nvim `v0.12.3`. It will be necessary to add bob's `nvim-dir` to your path.
+
+Additionally, the treesitter executable must be available on your system or the parsers will not be properly built. Use
+`cargo install tree-sitter-cli` to install the executable.
+
 ## Contains: 
 - Neovim Configuration 
 - Git Configuration
