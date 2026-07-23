@@ -65,6 +65,20 @@ return {
         vim.g.tex_conceal = "abdmg"
       end,
     },
+    -- Giles Snippets
+    {
+        "iurimateus/luasnip-latex-snippets.nvim",
+        dependencies = {
+          "L3MON4D3/LuaSnip",
+          "lervag/vimtex", -- optional if using treesitter
+        },
+        config = function()
+          require("luasnip").config.setup({
+            enable_autosnippets = true,
+          })
+          require("luasnip-latex-snippets").setup()
+        end,
+    },
 
     -- Auto-Documentation
     {

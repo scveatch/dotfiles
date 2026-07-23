@@ -12,12 +12,11 @@ return {
         -- load vscode-style snippets (friendly-snippets + any custom ones you put in ~/.config/nvim/snippets)
         require("luasnip.loaders.from_vscode").lazy_load()
         -- Load custom snippets
-        require("luasnip.loaders.from_lua").lazy_load({ paths = vim.fn.stdpath("config") .. "/snippets" })
+        require("luasnip.loaders.from_lua").load({ paths = vim.fn.stdpath("config") .. "/snippets" })
 
         -- setup blink
         require("blink.cmp").setup(opts)
     end,
-
     opts = {
         keymap = {
             preset = "enter",
