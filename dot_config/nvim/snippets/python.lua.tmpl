@@ -1,0 +1,35 @@
+local ls = require("luasnip")  -- the main luasnip object
+local s = ls.snippet
+local t = ls.text_node
+local i = ls.insert_node
+local f = ls.function_node
+local d = ls.dynamic_node
+local fmt = require("luasnip.extras.fmt").fmt
+
+local function filename()
+    local filepath = vim.fn.expand("%:p")
+    local root = vim.fs.root(0, { ".git", "pyproject.toml", "setup.py" })
+
+    if root then
+        return filepath:gsub("^" .. vim.pesc(root .. "/"), "")
+    end
+
+    return vim.fn.expand("%:p")
+end
+
+local function today()
+    return os.date("%m/%d/%Y")
+end
+
+return {
+  s("header", {
+    t('"""'),
+    t({"", "File: "}), f(filename),
+    t({"", "", "Description: "}), i(1, "Brief description of the file"),
+{{- if eq .profile "work" }}
+    t({"", "", "Author: {{ .author }} ({{ .email }})"}),
+{{- end }}
+    t({"", "", "Last Modified: "}), f(today), 
+    t({"", '"""'}),
+  }),
+}
